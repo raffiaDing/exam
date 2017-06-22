@@ -32,9 +32,28 @@
 			img {
 				border: 3px dotted black;
 			}
+
+			img:hover { 
+ 				border: 10px ridge red; 
+			} 
 		</style>
 
 		<script type="text/javascript">
+		
+			function change(paraID) {
+            var change1 = document.getElementById("cel");
+            var change2 = document.getElementById("pat");
+			var i = document.getElementById("image");
+            if (paraID == "cel") {
+                i.src = "celtics.png"
+            }
+            else if (paraID == "pat") {
+				i.src = "patriots.jpg"
+
+            }
+ 
+        
+        }
 
 		</script>
 
@@ -53,11 +72,11 @@
 		</p>
 		<hr>
 		<p>
-			<img src="" alt="" title="This is the image" width="100" height="100" />
+			<img id="image" src="" alt="" title="This is the image" width="100" height="100" />
 		</p>
 		<p >
-			<input type="button" value="Celtics" />
-			<input type="button" value="Patriots" />
+			<input id="cel" onclick="change(this.id)" type="button" value="Celtics" />
+			<input id="pat" onclick="change(this.id)" type="button" value="Patriots" />
 		</p>
 
 

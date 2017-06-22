@@ -32,6 +32,24 @@
             }
         </style>
         <script>
+                function processInput(){
+                var myForm = document.getElementById("form1");
+                var x;
+                var i = myForm.to.value
+               var sum = 0;
+                if(x=="" &&  i== ""){
+                alert("You should enter a number");
+            }
+
+               for (x=1;x<i; x++){
+                   sum=sum + x;}
+
+               document.getElementById("result").innerHTML = sum;
+               
+               return false;
+         }
+
+
 
         </script>
     </head>
@@ -48,7 +66,7 @@
 
 
         </p>
-        <form id="form1">
+        <form id="form1" action="" method="post">
             <p>
                 From: <input type="text" name="from" size="10" /> To: <input type="text" name="to" size="10">
             </p>
@@ -59,7 +77,7 @@
 
             </p>
             <p>
-                <input type="submit" name="Sum" value="SUM">
+                <input onclick="return processInput()" type="submit" name="Sum" value="SUM">
                 <input type="reset" name="reset" value="CLEAR">
             </p>
             <p>The sum is <span id="result"></span>.</p>
